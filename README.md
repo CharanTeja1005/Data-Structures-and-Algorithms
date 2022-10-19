@@ -13,5 +13,17 @@ Every Topic in this :
 3. Setting Up
 4. Introductin about data structures
 5. Recursion
-    i. Head Recursion
-    ii. Tail Recursion
+    i.    Head Recursion
+    ii.  Tail Recursion
+    iii. Tree Recursion
+    iv.  Indirect Recursion
+    v.   Nested Recursion
+    *Programs :*
+        Sum of first 'n' Natural numbers
+        Factorial of a number
+        Power or Exponent
+        Taylor Series
+        Taylor Series using Horner's rule
+        Fibonacci Series - Recursive, Iterative and Memoization
+        Combination Formula
+        Tower Of Hanoi
