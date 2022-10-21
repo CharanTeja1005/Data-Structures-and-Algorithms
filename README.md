@@ -27,3 +27,6 @@ Every Topic in this :
         Fibonacci Series - Recursive, Iterative and Memoization
         Combination Formula
         Tower Of Hanoi
+6. Array Representations
+   i.  Increase size of array
+   ii. 2D Array
