@@ -30,3 +30,11 @@ Every Topic in this :
 6. Array Representations
    i.  Increase size of array
    ii. 2D Array
+7. Array ADT
+    Operations :
+    i.   Display()
+    ii.  Add(x)/Append(x)
+    iii. Insert(index,x)
+    iv.  Delete(index)
+    v.   Search(x)
+            Linear Search(including Transposition and Move to Front/Head)
