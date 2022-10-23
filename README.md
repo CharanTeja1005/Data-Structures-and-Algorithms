@@ -55,3 +55,12 @@ Every Topic in this :
             b. Intersection
             c. Difference
     Finally, Menu Driven Array ADT in java (My Preferred Language)
+    /*Student Challenge : /*
+        Finding Single Missing Element
+        Finding Multiple Missing Element
+        Finding Missing Elements
+        Finding Duplicates in Sorted Array
+        Finding Duplicates in Unsorted Array
+        Finding a Pair with sum 'k'
+        Finding a Pair with sum 'k' in sorted array
+        Finding Max and Min in Single Scan
