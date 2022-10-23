@@ -1,80 +1,117 @@
 import java.io.*;
 
-class A
-{
-    int[] array;
+class Array{
+    int A[];
     int size;
     int length;
-    A()
+    Array()
     {
         this.length = 0;
-    }
-    A(int size)
-    {
-        this.array = new int[size];
-        this.size = size;
-        this.length = 0;
-    }
-
-    public void display()
-    {
-        for(int i=0;i<this.length;i++)
-        {
-            System.out.print(this.array[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public void add(int x)
-    {
-        if(this.length < this.size)
-        {
-            this.array[this.length] = x;
-            this.length++;
-        }
-    }
-
-    public void insert(int index,int x)
-    {
-        if(index > 0 && index <=this.length)
-        {
-            for(int i=this.length;i>index;i--)
-            {
-                this.array[i] = this.array[i-1];
-            }
-            this.array[index] = x;
-            this.length++;
-        }
     }
 }
 
 public class ArrayADT
 {
+    public static void append(Array a,int x)
+    {
+        if(a.length < a.size)
+        {
+            a.A[a.length++] = x;
+        }
+    }
+    
+    public static void insert(Array a,int index,int x)
+    {
+        if(index >= 0 && index <= a.length)
+        {
+            for(int i=a.length;i>index;i--)
+            {
+                a.A[i] = a.A[i-1];
+            }
+            a.A[index] = x;
+            a.length++;
+        }
+    }
+
+    public static int delete(Array a,int index)
+    {
+        if(index >= 0 && index < a.length)
+        {
+            int x = a.A[index];
+            for(int i=index;i<a.length-1;i++)
+            {
+                a.A[i] = a.A[i+1];
+            }
+            a.length--;
+            return x;
+        }
+        return -1;
+    }
+
+    public static int search(Array a,int key)
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            if(key == a.A[i])
+                return i;
+        }
+        return -1;
+    }
+
+    public static void display(Array a)
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a.A[i] + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) throws IOException
     {
-        A ar= new A();
-        // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        // System.out.print("Enter the size of Array : ");
-        // ar.size = Integer.parseInt(br.readLine());
-        // ar.array = new int[ar.size];
-        // System.out.print("Enter the number of elements : ");
-        // int n = Integer.parseInt(br.readLine());
-        // for(int i=0;i<n;i++)
-        // {
-        //     System.out.print("Enter element : ");
-        //     ar.array[i] = Integer.parseInt(br.readLine());
-        //     ar.length++;
-        // }
-        ar.array = new int[]{1,2,3,4,5};
-        ar.length = 5;
-        ar.display();
-        ar.add(6);
-        ar.display();
-        ar.add(7);
-        ar.display();
-        ar.insert(8,8);
-        ar.display();
-        ar.insert(1,0);
-        ar.display();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Array arr = new Array();
+        int choice = 0;
+        int x,index;
+
+        System.out.print("Enter the size of Array : ");
+        arr.size = Integer.parseInt(br.readLine());
+        arr.A = new int[arr.size];
+        while(choice < 11)
+        {
+            System.out.println("\nQueue Main Menu:\n");
+            System.out.println("1. Append\n2. Insert\n3. Delete\n4. Search\n5. Display\n6. Exit\n");
+            System.out.print("Choose one option : ");
+            choice = Integer.parseInt(br.readLine());
+            switch(choice)
+            {
+                case 1: System.out.print("\nEnter the element to be appended : ");
+                        x = Integer.parseInt(br.readLine());
+                        append(arr,x);
+                        break;
+                case 2: System.out.print("\nEnter the index to be inserted : ");
+                        index = Integer.parseInt(br.readLine());
+                        System.out.print("\nEnter the element to be inserted : ");
+                        x = Integer.parseInt(br.readLine());
+                        insert(arr,index,x);
+                        break;
+                case 3: System.out.print("\nEnter the index to be deleted : ");
+                        index = Integer.parseInt(br.readLine());
+                        System.out.println("Deleted element : " + delete(arr, index));
+                        break;
+                case 4: System.out.print("\nEnter the element to be searched : ");
+                        x = Integer.parseInt(br.readLine());
+                        int s = search(arr, x);
+                        System.out.println((s == -1) ? "\nElement not found in Array" : "\nElement found at index : " + s);
+                        break;
+                case 5: System.out.print("\nThe elements of Array ADT are : ");
+                        display(arr);
+                        break;
+                case 6: System.out.println("\nProgram Terminated");
+                        System.exit(0);
+               default: System.out.println("\nIncorrect choice, try again");
+                        break;
+            }
+        }
     }
 }

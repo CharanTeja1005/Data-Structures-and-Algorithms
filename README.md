@@ -38,3 +38,20 @@ Every Topic in this :
     iv.  Delete(index)
     v.   Search(x)
             Linear Search(including Transposition and Move to Front/Head)
+            Binary Search
+    vi.  Get(index)
+    vii. Set(index,x)
+    viii. Max()
+    ix.  Min()
+    x. Sum()
+    xi. Avg()
+    xii. Reverse() (in 2 ways)
+    xiii. Inserting in a Sorted Array
+    xiv. isSorted()
+    xv.  Rearrangement() (brings -ve elements to left side and +ve to right)
+    xvi. Merge two arrays
+    xvii. Set Operations
+            a. Union
+            b. Intersection
+            c. Difference
+    Finally, Menu Driven Array ADT in java (My Preferred Language)
