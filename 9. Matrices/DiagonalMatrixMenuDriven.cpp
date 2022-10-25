@@ -1,11 +1,6 @@
 #include<iostream>
 using namespace std;
 
-// struct DiagonalMatrix{
-//     int A[20];
-//     int n;
-// };
-
 class DiagonalMatrix
 {
 private:

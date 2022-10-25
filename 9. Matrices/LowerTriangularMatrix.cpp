@@ -5,14 +5,15 @@ using namespace std;
 
 class LowerTriangularMatrix
 {
-    private:
+    // private:
+    public:
     int n;
     int *A;
     public:
     LowerTriangularMatrix(int n)
     {
         this -> n = n;
-        A = new int[n];
+        A = new int[n*(n+1)/2];
     }
     void set(int i,int j,int x);
     int get(int i,int j);
