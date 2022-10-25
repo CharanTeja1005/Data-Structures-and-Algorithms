@@ -64,3 +64,12 @@ Every Topic in this :
         Finding a Pair with sum 'k'
         Finding a Pair with sum 'k' in sorted array
         Finding Max and Min in Single Scan
+8. Strings
+        Length of string
+        Changing Case
+        Counting of vowels and consonants
+        Duplicates in string
+        Reverse
+        Validation
+        Comparing and checking if palindrome
+        Anagram checking
