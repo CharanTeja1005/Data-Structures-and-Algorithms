@@ -55,7 +55,7 @@ Every Topic in this :
             b. Intersection
             c. Difference
     Finally, Menu Driven Array ADT in java (My Preferred Language)
-    /*Student Challenge : /*
+    *Student Challenge :*
         Finding Single Missing Element
         Finding Multiple Missing Element
         Finding Missing Elements
@@ -73,3 +73,11 @@ Every Topic in this :
         Validation
         Comparing and checking if palindrome
         Anagram checking
+9. Matrices
+        i. Diagonal Matrices
+        ii. Lower Triangular Matrices
+        iii. Upper Triangular Matrices
+        iv. Symmetric Matrices
+        v. Tridiagonal Matrices
+        vi. Square band Matrix
+        vii. Topelitz Matrix
