@@ -153,3 +153,7 @@ Every Topic in this :
    vi. Square band Matrix
 
    vii. Topelitz Matrix
+
+## 10. Sparse Matrix and Polynomial Representation
+   
+   i. Creation of Sparse Matrix (Coordinate List / 3 - column Representation)
