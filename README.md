@@ -154,6 +154,15 @@ Every Topic in this :
 
    vii. Topelitz Matrix
 
-## 10. Sparse Matrix and Polynomial Representation
+## 10.0. Sparse Matrix and Polynomial Representation
    
    i. Creation of Sparse Matrix (Coordinate List / 3 - column Representation)
+
+   ii. Addition of Sparse Matrices
+
+## 10.5. Polynomial Representation
+
+   i. Polynomial Representation
+
+   ii. Addition of polynomials
+   
