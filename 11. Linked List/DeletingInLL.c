@@ -44,26 +44,43 @@ void Rdisplay(struct Node *p)
     }
 }
 
-int max(struct Node *p)
+int count(struct Node *p)
 {
-    int m = -32768;
-
-    while(p)
+    int c = 0;
+    while(p != NULL)
     {
-        if(m < p->data)
-            m = p->data;
+        c++;
         p = p->next;
     }
-    return m;
+    return c;
 }
 
-int Rmax(struct Node *p)
+int delete(struct Node *p,int index)
 {
-    int x = 0;
-    if(p == NULL)
-        return -32768;
-    x = max(p->next);
-    return x>p->data ? x : p->data;
+    struct Node *q;
+    int x = -1,i;
+    if(index < 1 || index > count(p))
+        return -1;
+    if(index == 1)
+    {
+        q = first;
+        x = q->data;
+        first = first->next;
+        free(q);
+        return x;
+    }
+    else
+    {
+        for(i=0;i<index-1;i++)
+        {
+            q = p;
+            p = p->next;
+        }
+        q->next = p->next;
+        x = p->data;
+        free(p);
+        return x;
+    }
 }
 
 int main()
@@ -71,8 +88,7 @@ int main()
     int a[] = {1,2,3,4,5};
     create(a,5);
     display(first);
-    printf("\n");
-    printf("Maximum Element : %d\n",max(first));
-    printf("Maximum Element : %d\n",Rmax(first));
+    printf("Deleted Element : %d\n",delete(first,3));
+    display(first);
     return 0;
 }

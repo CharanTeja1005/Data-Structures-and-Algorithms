@@ -32,7 +32,7 @@ void display(struct Node *p)
         printf("%d -> ",p->data);
         p = p->next;
     }
-    printf("NULL\n");
+    printf("NULL");
 }
 
 void Rdisplay(struct Node *p)
@@ -44,26 +44,17 @@ void Rdisplay(struct Node *p)
     }
 }
 
-int max(struct Node *p)
+int isSorted(struct Node *p)
 {
-    int m = -32768;
-
+    int x = -32768;
     while(p)
     {
-        if(m < p->data)
-            m = p->data;
+        if(p->data < x)
+            return 0;
+        x = p->data;
         p = p->next;
     }
-    return m;
-}
-
-int Rmax(struct Node *p)
-{
-    int x = 0;
-    if(p == NULL)
-        return -32768;
-    x = max(p->next);
-    return x>p->data ? x : p->data;
+    return 1;
 }
 
 int main()
@@ -72,7 +63,6 @@ int main()
     create(a,5);
     display(first);
     printf("\n");
-    printf("Maximum Element : %d\n",max(first));
-    printf("Maximum Element : %d\n",Rmax(first));
+    isSorted(first) == 1 ? printf("LL is Sorted\n") : printf("LL is not Sorted\n");
     return 0;
 }

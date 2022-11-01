@@ -39,31 +39,37 @@ void Rdisplay(struct Node *p)
 {
     if(p != NULL)
     {
-        Rdisplay(p->next);
         printf("%d ",p->data);
+        Rdisplay(p->next);
     }
 }
 
-int max(struct Node *p)
+void SortedInsert(struct Node *p,int x)
 {
-    int m = -32768;
-
-    while(p)
+    struct Node *t,*q = NULL;
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = x;
+    t->next = NULL;
+    if(first == NULL)
+        first = t;
+    else
     {
-        if(m < p->data)
-            m = p->data;
-        p = p->next;
+        while(p && p->data < x)
+        {
+            q = p;
+            p = p->next;
+        }
+        if(p == first)
+        {
+            t->next = first;
+            first = t;
+        }
+        else
+        {
+            t->next = q->next;
+            q->next = t;
+        }
     }
-    return m;
-}
-
-int Rmax(struct Node *p)
-{
-    int x = 0;
-    if(p == NULL)
-        return -32768;
-    x = max(p->next);
-    return x>p->data ? x : p->data;
 }
 
 int main()
@@ -71,8 +77,10 @@ int main()
     int a[] = {1,2,3,4,5};
     create(a,5);
     display(first);
-    printf("\n");
-    printf("Maximum Element : %d\n",max(first));
-    printf("Maximum Element : %d\n",Rmax(first));
+    SortedInsert(first,35);
+    SortedInsert(first,25);
+    SortedInsert(first,15);
+    SortedInsert(first,18);
+    display(first);
     return 0;
 }

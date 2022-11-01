@@ -44,35 +44,31 @@ void Rdisplay(struct Node *p)
     }
 }
 
-int max(struct Node *p)
+void RemoveDuplicates(struct Node *p)
 {
-    int m = -32768;
-
-    while(p)
+    struct Node *q = p->next;
+    while(q)
     {
-        if(m < p->data)
-            m = p->data;
-        p = p->next;
+        if(p->data != q->data)
+        {
+            p = q;
+            q = q->next;
+        }
+        else
+        {
+            p->next = q->next;
+            free(q);
+            q = p->next;
+        }
     }
-    return m;
-}
-
-int Rmax(struct Node *p)
-{
-    int x = 0;
-    if(p == NULL)
-        return -32768;
-    x = max(p->next);
-    return x>p->data ? x : p->data;
 }
 
 int main()
 {
-    int a[] = {1,2,3,4,5};
-    create(a,5);
+    int a[] = {1,1,2,2,3,3,4,4,4,4,4,5,5,5};
+    create(a,14);
     display(first);
-    printf("\n");
-    printf("Maximum Element : %d\n",max(first));
-    printf("Maximum Element : %d\n",Rmax(first));
+    RemoveDuplicates(first);
+    display(first);
     return 0;
 }

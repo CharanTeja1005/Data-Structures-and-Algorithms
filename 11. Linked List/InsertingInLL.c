@@ -32,38 +32,59 @@ void display(struct Node *p)
         printf("%d -> ",p->data);
         p = p->next;
     }
-    printf("NULL\n");
+    printf("NULL");
 }
 
 void Rdisplay(struct Node *p)
 {
     if(p != NULL)
     {
-        Rdisplay(p->next);
         printf("%d ",p->data);
+        Rdisplay(p->next);
     }
 }
 
-int max(struct Node *p)
+int count(struct Node *p)
 {
-    int m = -32768;
-
-    while(p)
+    int c = 0;
+    while(p != NULL)
     {
-        if(m < p->data)
-            m = p->data;
+        c++;
         p = p->next;
     }
-    return m;
+    return c;
 }
 
-int Rmax(struct Node *p)
+int Rcount(struct Node *p)
 {
-    int x = 0;
     if(p == NULL)
-        return -32768;
-    x = max(p->next);
-    return x>p->data ? x : p->data;
+        return 0;
+    else
+        return Rcount(p->next) + 1;
+}
+
+void Insert(struct Node *p,int index,int x)
+{
+    struct Node *t;
+    int i;
+    if(index < 0 || index > count(p))
+        return;
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = x;
+    if(index == 0)
+    {
+        t->next = first;
+        first = t;
+    }
+    else
+    {
+        for(i=0;i<index-1;i++)
+        {
+            p = p->next;
+        }
+        t->next = p->next;
+        p->next = t;
+    }
 }
 
 int main()
@@ -72,7 +93,8 @@ int main()
     create(a,5);
     display(first);
     printf("\n");
-    printf("Maximum Element : %d\n",max(first));
-    printf("Maximum Element : %d\n",Rmax(first));
+    Insert(first,3,10);
+    Rdisplay(first);
+    printf("\n");
     return 0;
 }

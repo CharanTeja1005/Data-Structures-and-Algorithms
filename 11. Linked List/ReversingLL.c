@@ -44,26 +44,59 @@ void Rdisplay(struct Node *p)
     }
 }
 
-int max(struct Node *p)
+int count(struct Node *p)
 {
-    int m = -32768;
-
-    while(p)
+    int c = 0;
+    while(p != NULL)
     {
-        if(m < p->data)
-            m = p->data;
+        c++;
         p = p->next;
     }
-    return m;
+    return c;
 }
 
-int Rmax(struct Node *p)
+void Reverse(struct Node *p)
 {
-    int x = 0;
-    if(p == NULL)
-        return -32768;
-    x = max(p->next);
-    return x>p->data ? x : p->data;
+    int *A;
+    A = (int *)malloc(sizeof(int) * count(first));
+    struct Node *q = p;
+    int i = 0;
+    while(q)
+    {
+        A[i++] = q->data;
+        q = q->next;
+    }
+    i--;
+    q = p;
+    while(q)
+    {
+        q->data = A[i--];
+        q = q->next;
+    }
+}
+
+void Reverse2(struct Node *p)
+{
+    struct Node *q = NULL,*r = NULL;
+    while(p)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+    first = q;
+}
+
+void RRReverse(struct Node *q,struct Node *p)
+{
+    if(p)
+    {
+        RRReverse(p,p->next);
+        p->next = q;
+    }
+    else
+        first = q;
 }
 
 int main()
@@ -71,8 +104,11 @@ int main()
     int a[] = {1,2,3,4,5};
     create(a,5);
     display(first);
-    printf("\n");
-    printf("Maximum Element : %d\n",max(first));
-    printf("Maximum Element : %d\n",Rmax(first));
+    Reverse(first);
+    display(first);
+    Reverse2(first);
+    display(first);
+    RRReverse(NULL,first);
+    display(first);
     return 0;
 }
