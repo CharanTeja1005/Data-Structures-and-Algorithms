@@ -62,12 +62,12 @@ int length(struct Node *p)
 
 void insert(struct Node *p,int index,int x)
 {
+    if(index < 0 || index > length(p))
+        return;
     struct Node *t;
     int i;
     t = (struct Node *)malloc(sizeof(struct Node));
     t->data = x;
-    if(index < 0 || index > length(p))
-        return;
 
     if(index == 0)
     {
@@ -134,6 +134,7 @@ int delete(struct Node *p,int index)
         p->next = q->next;
         free(q);
     }
+    return x;
 }
 
 int main()
