@@ -168,5 +168,18 @@ Every Topic in this :
 
 ## 11. Linked List
    i. Displaying Linked List recusrive also...
-
-   
+   ii. Counting Nodes in LL
+   iii. Sum of all elements in LL
+   iv. Maximum elements in LL
+   v. Searching in LL (Linear Search, Also using Transposition)
+   vi. Inserting in LL
+   vii. Deleting from LL
+   viii. Check if LL is sorted
+   ix. Remove duplicates
+   x. Reversing a LL
+   xi. Concatenating LL
+   xii. Merge LL
+   xiii. Check for loop in LL
+   xiv. Circular LL
+   xv. Doubly LL
+   xvi. Circular Doubly LL
