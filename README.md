@@ -183,3 +183,11 @@ Every Topic in this :
    xiv. Circular LL
    xv. Doubly LL
    xvi. Circular Doubly LL
+## 12.0. Sparse Matrix using LL
+   i. Creating Sparse Matrix
+   ii. Displaying
+   iii. Adding Sparse Matrices
+## 12.5. Polynomial Representation using LL
+   i. Creating Polynomial
+   ii. Displaying Polynomial
+   iii. Adding Polynomials

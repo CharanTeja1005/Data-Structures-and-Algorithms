@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+struct Node
+{
+    int col;
+    int val;
+    struct Node *next;
+};
+
+struct SparseMatrix
+{
+    int m;
+    int n;
+    int num;
+    struct Node *A;
+};
+
+void create(struct SparseMatrix *s)
+{
+    printf("Enter the dimensions of Matrix : ");
+    scanf("%d x %d",&s->m,&s->n);
+    printf("Enter the number of non-zero elements in Sparse Matrix : ");
+    scanf("%d",&s->num);
+    s->A = (struct Node *)malloc(s->num * sizeof(struct Node));
+    int i,j;
+}
+
+int main()
+{
+    struct SparseMatrix s;
+    
+    return 0;
+}
