@@ -191,3 +191,6 @@ Every Topic in this :
    i. Creating Polynomial
    ii. Displaying Polynomial
    iii. Adding Polynomials
+
+## 13. Stack
+   i. Stack Using Array
