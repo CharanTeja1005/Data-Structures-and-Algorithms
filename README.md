@@ -167,6 +167,7 @@ Every Topic in this :
    ii. Addition of polynomials
 
 ## 11. Linked List
+
    i. Displaying Linked List recusrive also...
 
    ii. Counting Nodes in LL
@@ -216,4 +217,5 @@ Every Topic in this :
    iii. Adding Polynomials
 
 ## 13. Stack
+
    i. Stack Using Array
