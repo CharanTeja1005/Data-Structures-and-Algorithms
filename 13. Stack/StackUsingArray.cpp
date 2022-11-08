@@ -95,7 +95,7 @@ int main()
     while(1)
     {
         cout<<endl<<"Stack Menu :"<<endl;
-        cout<<"1. Pop\n2.Push\n3.Peek\n4.Top\n5.isEmpty\n6.isFull\n7.Exit\n";
+        cout<<"1. Push\n2. Pop\n3. Peek\n4. Top\n5. isEmpty\n6. isFull\n7. Exit\n";
         cout<<"Enter your choice : ";
         cin>>c;
         cout<<endl;
