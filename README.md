@@ -219,3 +219,6 @@ Every Topic in this :
 ## 13. Stack
 
    i. Stack Using Array
+   
+   ii. Stack Using Linked List
+   
