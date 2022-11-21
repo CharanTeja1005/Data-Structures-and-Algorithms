@@ -83,7 +83,7 @@ int main()
     int n;
     cout<<"Enter size of Stack : ";
     cin>>n;
-    Stack<int> st[n];
+    Stack<int> st;
     int c,x;
     while(1)
     {
@@ -96,15 +96,15 @@ int main()
         {
             case 1: cout<<"Enter the element to be pushed : ";
                     cin>>x;
-                    st->push(x);
+                    st.push(x);
                     break;
-            case 2: x = st->pop();
+            case 2: x = st.pop();
                     x == -1 ?
                     cout<<"Stack underflow!"<<endl :
                     cout<<"Popped Element : "<<x<<endl;
                     break;
             case 3: cout<<"Elements of stack : ";
-                    st->display();
+                    st.display();
                     break;
             case 4: cout<<"Program Terminated!!!"<<endl;
                     exit(0);
