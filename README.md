@@ -228,3 +228,13 @@ Every Topic in this :
 
    v. Evaluation of Postfix Expression
 
+## 14. Queues
+
+   i. Queue Using Array
+
+   ii. Circular Queue
+
+   iii. Queue Using Linked List
+
+   iv. Queue Using 2 Stacks
+
