@@ -1,7 +1,11 @@
 #include<iostream>
+#include "Node.h"
+#include "Stack.h"
 #include "Queue.h"
 
 using namespace std;
+
+//   Insertion in Level Order
 
 class Tree
 {
@@ -38,6 +42,21 @@ public:
         return Height(root);
     }
     int Height(Node *root);
+    void IPreorder()
+    {
+        IPreorder(root);
+    }
+    void IPreorder(Node *p);
+    void IInorder()
+    {
+        IInorder(root);
+    }
+    void IInorder(Node *p);
+    void IPostorder()
+    {
+        IPostorder(root);
+    }
+    void IPostorder(Node *p);
 };
 
 void Tree::CreateTree()
@@ -139,10 +158,76 @@ int Tree::Height(Node *root)
     return (x>y) ? x+1 : y+1;
 }
 
+void Tree::IPreorder(Node *p)
+{
+    Stack st(100);
+    while(p != NULL || !st.isEmpty())
+    {
+        if(p)
+        {
+            cout<<p->data<<" ";
+            st.push(p);
+            p = p->lchild;
+        }
+        else
+        {
+            p = st.pop()->rchild;
+        }
+    }
+}
+
+void Tree::IInorder(Node *p)
+{
+    Stack st(100);
+    while(p != NULL || !st.isEmpty())
+    {
+        if(p)
+        {
+            st.push(p);
+            p = p->lchild;
+        }
+        else
+        {
+            p = st.pop();
+            cout<<p->data<<" ";
+            p = p->rchild;
+        }
+    }
+}
+
+void Tree::IPostorder(Node *p)
+{
+    Stack st(100);
+    long int temp;
+    while(p != NULL || !st.isEmpty())
+    {
+        if(p)
+        {
+            st.push(p);
+            p = p->lchild;
+        }
+        else
+        {
+            temp = (long int)st.pop();
+            if(temp > 0)
+            {
+                st.push(((Node *)(-temp)));
+                p = ((Node *)temp)->rchild;
+            }
+            else
+            {
+                cout<<((Node *)(-temp))->data<<" ";
+                p = NULL;
+            }
+        }
+    }
+}
+
 int main()
 {
     Tree t;
     t.CreateTree();
+    cout<<endl;
     cout<<"PreOrder Traversal : ";
     t.Preorder();
     cout<<endl;
@@ -156,5 +241,14 @@ int main()
     t.Levelorder();
     cout<<endl;
     cout<<"The Height of Tree : "<<t.Height()<<endl;
+    cout<<"Iterative Preorder Traversal : ";
+    t.IPreorder();
+    cout<<endl;
+    cout<<"Iterative Inorder Traversal : ";
+    t.IInorder();
+    cout<<endl;
+    cout<<"Iterative Postorder Traversal : ";
+    t.IPostorder();
+    cout<<endl;
     return 0;
 }

@@ -242,4 +242,9 @@ Every Topic in this :
 
    i. Creating Binary Tree (Using Queue)
 
+   ii. Preorder, Inorder, Postorder, Levelorder Traversal
+
+   iii. Height of tree
+
+   iv. Iterative Preorder, Inorder, Postorder Traversal
    
