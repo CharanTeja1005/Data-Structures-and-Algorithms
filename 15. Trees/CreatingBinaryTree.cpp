@@ -57,6 +57,11 @@ public:
         IPostorder(root);
     }
     void IPostorder(Node *p);
+    int countNodes()
+    {
+        return countNodes(root);
+    }
+    int countNodes(Node *p);
 };
 
 void Tree::CreateTree()
@@ -75,7 +80,7 @@ void Tree::CreateTree()
     while(!q.isEmpty())
     {
         p = q.dequeue();
-        cout<<"Enter left child value : ";
+        cout<<"Enter left child value of "<<p->data<<" : ";
         cin>>x;
         if(x != -1)
         {
@@ -85,7 +90,7 @@ void Tree::CreateTree()
             p->lchild = t;
             q.enqueue(t);
         }
-        cout<<"Enter right child value : ";
+        cout<<"Enter right child value "<<p->data<<": ";
         cin>>x;
         if(x != -1)
         {
@@ -223,6 +228,13 @@ void Tree::IPostorder(Node *p)
     }
 }
 
+int Tree::countNodes(Node *p)
+{
+    if(p == NULL)
+        return 0;
+    return countNodes(p->lchild) + countNodes(p->rchild) + 1;
+}
+
 int main()
 {
     Tree t;
@@ -250,5 +262,6 @@ int main()
     cout<<"Iterative Postorder Traversal : ";
     t.IPostorder();
     cout<<endl;
+    cout<<"Number of Nodes : "<<t.countNodes()<<endl;
     return 0;
 }

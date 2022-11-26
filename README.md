@@ -248,3 +248,5 @@ Every Topic in this :
 
    iv. Iterative Preorder, Inorder, Postorder Traversal
    
+   v. Counting Number of nodes in Binary Tree
+
