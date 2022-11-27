@@ -250,3 +250,25 @@ Every Topic in this :
    
    v. Counting Number of nodes in Binary Tree
 
+## 16. Binary Search Trees
+
+   i. Inserting in BST (Iterative & Recursive)
+
+   ii. Deleting in BST
+
+   iii. Searching in BST
+
+   iv. Generating BST from Preorder Traversal
+
+## 17. AVL Trees
+
+   i. Inserting in AVL Trees with all 4 types of Rotations
+
+## 18. Search Trees (No Programs)
+
+   i. 2-3 Trees
+
+   ii. 2-3-4 Trees
+
+   iii. Red-Black Trees
+
