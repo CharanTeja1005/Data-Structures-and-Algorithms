@@ -14,7 +14,7 @@ Every Topic in this :
 
 ## 3. Setting Up
 
-## 4. Introductin about data structures
+## 4. Introduction about data structures
 
 ## 5. Recursion
 
