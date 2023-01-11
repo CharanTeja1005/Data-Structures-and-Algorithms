@@ -272,3 +272,22 @@ Every Topic in this :
 
    iii. Red-Black Trees
 
+## 19. Sorting Techniques
+
+   i. Bubble Sort
+
+   ii. Insertion Sort
+
+   iii. Selection Sort
+
+   iv. Quick Sort
+
+   v. Merge Sort (Iterative & Recursive)
+
+   vi. Count Sort
+
+   vii. Bin/Bucket Sort
+
+   viii. Radix Sort
+
+   ix. Shell Sort
